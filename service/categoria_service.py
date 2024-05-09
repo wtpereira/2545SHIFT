@@ -28,7 +28,7 @@ class CategoriaService(MenuService):
     def adicionar(self):
         print('Adicionando categoria...')
         try:
-            nome = input('Digite o nome da categora: ')
+            nome = input('Digite o nome da categoria: ')
             nova_categoria = Categoria(nome)
             self.__categoria_dao.adicionar(nova_categoria)
             print('\nCategoria adicionada com sucesso!\n')
