@@ -26,7 +26,7 @@ class CategoriaDAO:
     def adicionar(self, categoria: Categoria) -> None:
         conexao = self.__conexao_factory.get_conexao()
         cursor = conexao.cursor()
-        cursor.execute(f'INSERT INTO categorias (nome) VALUES ({categoria.nome})')
+        cursor.execute(f"INSERT INTO categorias (nome) VALUES ('{categoria.nome}')")
         conexao.commit()
         cursor.close()
         conexao.close()
