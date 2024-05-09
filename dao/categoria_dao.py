@@ -59,12 +59,3 @@ class CategoriaDAO:
         conexao.close()
 
         return cat
-
-    def ultimo_id(self) -> int:
-        index = len(self.__categorias) - 1
-        if index == -1:
-            id = 0
-        else:
-            id = self.__categorias[index].id
-
-        return id
