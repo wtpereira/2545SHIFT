@@ -28,9 +28,8 @@ class CategoriaService(MenuService):
     def adicionar(self):
         print('Adicionando categoria...')
         try:
-            id = self.__categoria_dao.ultimo_id() + 1
             nome = input('Digite o nome da categora: ')
-            nova_categoria = Categoria(id, nome)
+            nova_categoria = Categoria(nome)
             self.__categoria_dao.adicionar(nova_categoria)
             print('\nCategoria adicionada com sucesso!\n')
         except Exception as e:
@@ -61,7 +60,7 @@ class CategoriaService(MenuService):
             if cat == None:
                 print('\nCategoria não encontrada\n')
             else:
-                print(f'Id: {cat.id} | Categoria: {cat.nome}')
+                print(cat)
         except Exception as e:
             print(f'Erro ao exibir categoria: {e}')
 
