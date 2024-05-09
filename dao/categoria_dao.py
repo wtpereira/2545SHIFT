@@ -1,31 +1,62 @@
+from database.conexao_factory import ConexaoFactory
 from model.categoria import Categoria
 
 
 class CategoriaDAO:
     def __init__(self) -> None:
-        self.__categorias: list[Categoria] = list()
+        self.__conexao_factory = ConexaoFactory()
 
     def listar(self) -> list[Categoria]:
-        return self.__categorias
+        categorias = list()
+
+        conexao = self.__conexao_factory.get_conexao()
+        cursor = conexao.cursor()
+        cursor.execute('SELECT id, nome FROM categorias')
+        resultados = cursor.fetchall()
+        for resultado in resultados:
+            cat = Categoria(resultado[1])
+            cat.id = resultado[0]
+            categorias.append(cat)
+
+        cursor.close()
+        conexao.close()
+
+        return categorias
 
     def adicionar(self, categoria: Categoria) -> None:
-        self.__categorias.append(categoria)
+        conexao = self.__conexao_factory.get_conexao()
+        cursor = conexao.cursor()
+        cursor.execute(f'INSERT INTO categorias (nome) VALUES ({categoria.nome})')
+        conexao.commit()
+        cursor.close()
+        conexao.close()
 
     def remover(self, categoria_id: int) -> bool:
-        for c in self.__categorias:
-            if c.id == categoria_id:
-                index = self.__categorias.index(c)
-                self.__categorias.pop(index)
-                return True  # encontrado
+        conexao = self.__conexao_factory.get_conexao()
+        cursor = conexao.cursor()
+        cursor.execute(f'DELETE FROM categorias WHERE id = {categoria_id}')
+        categorias_removidas = cursor.rowcount
+        conexao.commit()
+        cursor.close()
+        conexao.close()
 
-        return False  # não encontrado
+        if categorias_removidas == 0:
+            return False
+
+        return True
 
     def buscar_por_id(self, categora_id) -> Categoria:
         cat = None
-        for c in self.__categorias:
-            if c.id == categora_id:
-                cat = c
-                break
+        conexao = self.__conexao_factory.get_conexao()
+        cursor = conexao.cursor()
+        cursor.execute(f'SELECT id, nome FROM categorias where id = {categora_id}')
+        resultado = cursor.fetchone()
+        if resultado:
+            cat = Categoria(resultado[1])
+            cat.id = resultado[0]
+
+        cursor.close()
+        conexao.close()
 
         return cat
 
