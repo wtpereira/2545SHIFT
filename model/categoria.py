@@ -1,7 +1,7 @@
 class Categoria:
     def __init__(self, nome: str) -> None:
         self.__id: int = 0
-        self.__nome: str = nome
+        self.nome = nome
 
     def __str__(self) -> str:
         return f'{self.id} | {self.nome}'
@@ -20,4 +20,4 @@ class Categoria:
 
     @nome.setter
     def nome(self, nome: str):
-        self.__nome = nome
+        self.__nome = nome.strip().title()
