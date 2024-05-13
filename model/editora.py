@@ -1,10 +1,10 @@
 class Editora:
 
-    def __init__(self, id: int, nome: str, endereco: str, telefone: str):
-        self.__id: int = id
-        self.__nome: str = nome
-        self.__endereco: str = endereco
-        self.__telefone: str = telefone
+    def __init__(self, nome: str, endereco: str, telefone: str):
+        self.__id: int = 0
+        self.nome = nome
+        self.endereco = endereco
+        self.telefone = telefone
 
     def __str__(self) -> str:
         return f'{self.id} | {self.nome} | {self.endereco} | {self.telefone}'
@@ -23,7 +23,7 @@ class Editora:
 
     @nome.setter
     def nome(self, nome: str):
-        self.__nome = nome
+        self.__nome = nome.strip().title()
 
     @property
     def endereco(self) -> str:
