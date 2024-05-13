@@ -1,11 +1,11 @@
 class Autor:
 
-    def __init__(self, id: int, nome: str, email: str, telefone: str, bio: str):
-        self.__id: int = id
-        self.__nome: str = nome
-        self.__email: str = email
-        self.__telefone: str = telefone
-        self.__bio: str = bio
+    def __init__(self, nome: str, email: str, telefone: str, bio: str):
+        self.__id: int = 0
+        self.nome = nome
+        self.email = email
+        self.telefone = telefone
+        self.bio = bio
 
     def __str__(self) -> str:
         return f'{self.id} | {self.nome} | {self.email} | {self.telefone} | {self.bio}'
@@ -32,7 +32,7 @@ class Autor:
 
     @email.setter
     def email(self, email: str):
-        self.__email = email
+        self.__email = email.strip().lower()
 
     @property
     def telefone(self) -> str:
