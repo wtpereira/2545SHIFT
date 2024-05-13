@@ -33,8 +33,7 @@ class LivroService(MenuService):
         print('\nAdicionando livro...')
 
         try:
-            id = self.__livro_dao.ultimo_id() + 1
-            titulo = input('Digite o titulo do livr: ')
+            titulo = input('Digite o titulo do livro: ')
             resumo = input('Digite o resumo do livro: ')
             ano = int(input('Digite o ano do livro: '))
             paginas = int(input('Digite a quantidade de páginas do livro: '))
@@ -83,7 +82,7 @@ class LivroService(MenuService):
                 id_autor = int(input('Digite o ID do autor do livro: '))
                 autor = self.__autor_dao.buscar_por_id(id_autor)
 
-            novo_livro = Livro(id, titulo, resumo, ano, paginas, isbn, categoria, editora, autor)
+            novo_livro = Livro(titulo, resumo, ano, paginas, isbn, categoria, editora, autor)
 
             self.__livro_dao.adicionar(novo_livro)
             print('Livro adicionado com sucesso!')
