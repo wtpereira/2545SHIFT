@@ -5,7 +5,6 @@ from model.categoria import Categoria
 
 class Livro:
     def __init__(self,
-                 id: int,
                  titulo: str,
                  resumo: str,
                  ano: int,
@@ -14,15 +13,15 @@ class Livro:
                  categoria: Categoria,
                  editora: Editora,
                  autor: Autor) -> None:
-        self.__id = id
-        self.__titulo = titulo
-        self.__resumo = resumo
-        self.__ano = ano
-        self.__paginas = paginas
-        self.__isbn = isbn
-        self.__categoria = categoria
-        self.__editora = editora
-        self.__autor = autor
+        self.__id = 0
+        self.titulo = titulo
+        self.resumo = resumo
+        self.ano = ano
+        self.paginas = paginas
+        self.isbn = isbn
+        self.categoria = categoria
+        self.editora = editora
+        self.autor = autor
 
     def __str__(self) -> str:
         return f'Id: {self.__id} | Título: {self.__titulo} | Resumo: {self.__resumo} | Ano: {self.__ano} | Páginas: {self.__paginas} | Isbn: {self.__isbn} | Categoria: {self.categoria.nome} | Editora: {self.editora.nome} | Autor: {self.autor.nome}'
@@ -41,7 +40,7 @@ class Livro:
 
     @titulo.setter
     def titulo(self, titulo: str):
-        self.__titulo = titulo
+        self.__titulo = titulo.strip().title()
 
     @property
     def resumo(self) -> str:
