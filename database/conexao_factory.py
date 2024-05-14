@@ -1,6 +1,17 @@
 import psycopg2
 
+from os import getenv
+from dotenv import load_dotenv
+
+
+load_dotenv()  # take environment variables from .env.
+
 
 class ConexaoFactory:
     def get_conexao(self):
-        return psycopg2.connect(host='ep-nameless-recipe-a4e8ctcf.us-east-1.aws.neon.tech', database='livraria', user='livraria_owner', password='euCnR8Bh4KiP')
+        return psycopg2.connect(
+            host=getenv('PGHOST'),
+            database=getenv('PGDATABASE'),
+            user=getenv('PGUSER'),
+            password=getenv('PGPASSWORD')
+        )
