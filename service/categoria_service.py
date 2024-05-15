@@ -65,3 +65,6 @@ class CategoriaService(MenuService):
             print(f'Erro ao exibir categoria: {e}')
 
         input('Pressione uma tecla para continuar...')
+
+    def importar_csv(self):
+        print('Método ainda não implementado.')

@@ -1,6 +1,7 @@
 from service.menu_service import MenuService
 from dao.editora_dao import EditoraDAO
 from model.editora import Editora
+from utils import editoras_csv
 
 
 class EditoraService(MenuService):
@@ -72,6 +73,19 @@ class EditoraService(MenuService):
                 print(f'{edt.id} | {edt.nome} | {edt.endereco} | {edt.telefone}')
         except Exception as e:
             print(f'Erro ao exibir editora! - {e}')
+            return
+
+        input('Pressione uma tecla para continuar...')
+
+    def importar_csv(self):
+        print('Inserir editoras CSV...')
+        try:
+            nome_arquivo = input('Digite o nome do arquivo CSV (precisa estar na raiz do projeto): ')
+            lista_dict_editoras = editoras_csv.ler_csv_e_gera_uma_lista_de_editoras(nome_arquivo)
+            self.__editora_dao.adicionar_muitos(lista_dict_editoras)
+            print('Editoras do CSV adicionadas com sucesso!')
+        except Exception as e:
+            print(f'Erro ao importar dados do arquivo CSV: {e}')
             return
 
         input('Pressione uma tecla para continuar...')

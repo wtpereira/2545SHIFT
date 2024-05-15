@@ -119,3 +119,6 @@ class LivroService(MenuService):
             print(f'Erro ao exibir livro: {e}')
 
         input('Pressione uma tecla para continuar...')
+
+    def importar_csv(self):
+        print('Método ainda não implementado.')
