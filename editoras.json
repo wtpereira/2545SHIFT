@@ -1,0 +1,52 @@
+[
+    {
+        "endereco": "Rua da Consolação, 269, Cerqueira César, São Paulo - SP, 01423-002 - Brasil",
+        "nome": "Companhia das Letras",
+        "telefone": "(11) 3255-4400"
+    },
+    {
+        "endereco": "Rua General Jardim, 588, Vila Madalena, São Paulo - SP, 01411-000 - Brasil",
+        "nome": "Editora Rocco",
+        "telefone": "(11) 3875-2600"
+    },
+    {
+        "endereco": "Rua Dr. José Augusto, 231, Vila Leopoldina, São Paulo - SP, 01455-000 - Brasil",
+        "nome": "Editora Arqueiro",
+        "telefone": "(11) 3034-4444"
+    },
+    {
+        "endereco": "Rua Visconde de Pirajá, 517, Vila Madalena, São Paulo - SP, 01419-900 - Brasil",
+        "nome": "Editora Intrínseca",
+        "telefone": "(11) 3868-6600"
+    },
+    {
+        "endereco": "Rua Voluntários da Pátria, 45, Botafogo, Rio de Janeiro - RJ, 22270-001 - Brasil",
+        "nome": "Editora Sextante",
+        "telefone": "(21) 2277-8877"
+    },
+    {
+        "endereco": "Rua da Candelária, 6, Centro, Rio de Janeiro - RJ, 20090-000 - Brasil",
+        "nome": "Editora Record",
+        "telefone": "(21) 2232-9222"
+    },
+    {
+        "endereco": "Rua Benjamin Constant, 98, Botafogo, Rio de Janeiro - RJ, 22270-010 - Brasil",
+        "nome": "Editora Nova Fronteira",
+        "telefone": "(21) 2545-0100"
+    },
+    {
+        "endereco": "Rua Rodrigues Argelos, 41, Ipanema, Rio de Janeiro - RJ, 22420-090 - Brasil",
+        "nome": "Editora Objetiva",
+        "telefone": "(21) 2529-5777"
+    },
+    {
+        "endereco": "Rua Padre João Manoel, 1001, Barra da Tijuca, Rio de Janeiro - RJ, 22793-030 - Brasil",
+        "nome": "Editora Globo",
+        "telefone": "(21) 4002-8000"
+    },
+    {
+        "endereco": "Rua Benjamin Constant, 98, Botafogo, Rio de Janeiro - RJ, 22270-010 - Brasil",
+        "nome": "Editora Leya",
+        "telefone": "(21) 2545-0100"
+    }
+]
