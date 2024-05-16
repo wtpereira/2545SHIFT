@@ -2,6 +2,8 @@ from service.menu_service import MenuService
 from dao.autor_dao import AutorDAO
 from model.autor import Autor
 
+from utils import autores_csv
+
 
 class AutorService(MenuService):
     def __init__(self):
@@ -77,4 +79,17 @@ class AutorService(MenuService):
         input('Pressione uma tecla para continuar...')
 
     def importar_csv(self):
-        print('Método ainda não implementado.')
+        print('Importar autores CSV...')
+        try:
+            nome_arquivo = input('Digite o nome do arquivo CSV (precisa estar na raiz do projeto): ')
+            lista_dict_autores = autores_csv.ler_csv_e_gera_uma_lista_de_autores(nome_arquivo)
+            self.__autor_dao.adicionar_muitos(lista_dict_autores)
+            print('Autores do CSV importados com sucesso!')
+        except Exception as e:
+            print(f'Erro ao importar dados do arquivo CSV: {e}')
+            return
+
+        input('Pressione uma tecla para continuar...')
+
+    def importar_json(self):
+        print('Método não implementado.')

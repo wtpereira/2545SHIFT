@@ -59,3 +59,7 @@ class AutorDAO:
         conexao.close()
 
         return aut
+
+    def adicionar_muitos(self, lista_autores: list):
+        for autor in lista_autores:
+            self.adicionar(autor)

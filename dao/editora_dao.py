@@ -60,6 +60,6 @@ class EditoraDAO:
 
         return edt
 
-    def adicionar_muitos(self, lista_editoras: list):
+    def adicionar_muitos(self, lista_editoras: list[Editora]):
         for editora in lista_editoras:
             self.adicionar(editora)

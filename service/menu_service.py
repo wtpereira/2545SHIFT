@@ -6,6 +6,7 @@ class MenuService:
               3 - Excluir {tipo_objeto}
               4 - Ver {tipo_objeto} por Id
               5 - Importar arquivo CSV
+              6 - Importar arquivo JSON
               0 - Voltar ao menu anterior """)
 
         escolha = input('Digite a opção: ')
@@ -21,6 +22,8 @@ class MenuService:
             self.mostrar_por_id()
         elif escolha == '5':
             self.importar_csv()
+        elif escolha == '6':
+            self.importar_json()
         else:
             print('Opção inválida! Por favor, tente novamente!')
 

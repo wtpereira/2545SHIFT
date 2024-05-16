@@ -1,7 +1,7 @@
 from service.menu_service import MenuService
 from dao.editora_dao import EditoraDAO
 from model.editora import Editora
-from utils import editoras_csv
+from utils import editoras_csv, editoras_json
 
 
 class EditoraService(MenuService):
@@ -78,14 +78,27 @@ class EditoraService(MenuService):
         input('Pressione uma tecla para continuar...')
 
     def importar_csv(self):
-        print('Inserir editoras CSV...')
+        print('Importar editoras CSV...')
         try:
             nome_arquivo = input('Digite o nome do arquivo CSV (precisa estar na raiz do projeto): ')
             lista_dict_editoras = editoras_csv.ler_csv_e_gera_uma_lista_de_editoras(nome_arquivo)
             self.__editora_dao.adicionar_muitos(lista_dict_editoras)
-            print('Editoras do CSV adicionadas com sucesso!')
+            print('Editoras do CSV importadas com sucesso!')
         except Exception as e:
             print(f'Erro ao importar dados do arquivo CSV: {e}')
+            return
+
+        input('Pressione uma tecla para continuar...')
+
+    def importar_json(self):
+        print('Importar editoras JSON...')
+        try:
+            nome_arquivo = input('Digite o nome do arquivo JSON (precisa estar na raiz do projeto): ')
+            lista_dict_editoras = editoras_json.ler_json_e_gera_uma_lista_de_editoras(nome_arquivo)
+            self.__editora_dao.adicionar_muitos(lista_dict_editoras)
+            print('Editoras do JSON importadas com sucesso!')
+        except Exception as e:
+            print(f'Erro ao importar dados do arquivo JSON: {e}')
             return
 
         input('Pressione uma tecla para continuar...')

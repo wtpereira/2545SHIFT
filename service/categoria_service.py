@@ -68,3 +68,6 @@ class CategoriaService(MenuService):
 
     def importar_csv(self):
         print('Método ainda não implementado.')
+
+    def importar_json(self):
+        print('Método não implementado.')
