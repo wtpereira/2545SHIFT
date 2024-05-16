@@ -102,3 +102,16 @@ class EditoraService(MenuService):
             return
 
         input('Pressione uma tecla para continuar...')
+
+    def exportar_json(self):
+        print('Exportar editoras JSON...')
+        try:
+            nome_arquivo = input('Digite o nome para o novo arquivo JSON (será gerado na pasta raiz do projeto): ')
+            lista_de_editoras = self.__editora_dao.listar()
+            editoras_json.criando_json_usando_lista_de_editoras(lista_de_editoras, nome_arquivo)
+            print('JSON de editoras gerado com sucesso!')
+        except Exception as e:
+            print(f'Erro ao exportar arquivo JSON: {e}')
+            return
+
+        input('Pressione uma tecla para continuar...')

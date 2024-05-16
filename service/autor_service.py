@@ -93,3 +93,6 @@ class AutorService(MenuService):
 
     def importar_json(self):
         print('Método não implementado.')
+
+    def exportar_json(self):
+        print('Método não implementado.')
