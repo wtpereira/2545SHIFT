@@ -7,7 +7,7 @@ class MenuService:
               4 - Ver {tipo_objeto} por Id
               5 - Importar arquivo CSV
               6 - Importar arquivo JSON
-              7 - Exportar editoras para JSON
+              7 - Exportar todos os registros de '{tipo_objeto}' para JSON
               0 - Voltar ao menu anterior """)
 
         escolha = input('Digite a opção: ')
