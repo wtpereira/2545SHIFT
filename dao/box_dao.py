@@ -35,3 +35,15 @@ class BoxDAO:
             return True
 
         return False
+
+    def buscar_por_id(self, box_id: ObjectId) -> Box:
+        box = None
+        client = self.__client.get_client()
+        db = client.livraria  # use livraria
+        documento = db.box.find_one({'_id': box_id})
+        if documento:
+            box = Box(documento['nome'], documento['livros'])
+            box.id = documento['_id']
+
+        client.close()
+        return box

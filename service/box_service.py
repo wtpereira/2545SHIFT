@@ -33,7 +33,7 @@ class BoxService(MenuService):
         except Exception as e:
             print(f'Erro ao exibir os boxes: {e}')
 
-        input('Pressione uma tecla para continuar...')
+        input('\nPressione uma tecla para continuar...\n')
 
     def adicionar(self):
         print('\nAdicionando um box de livros...')
@@ -56,7 +56,7 @@ class BoxService(MenuService):
             print(f'Erro ao inserir box de livros: {e}')
             return
 
-        input('Pressione uma tecla para continuar...')
+        input('\nPressione uma tecla para continuar...\n')
 
     def remover(self):
         print('\nRemovendo o box service...')
@@ -71,4 +71,19 @@ class BoxService(MenuService):
         except Exception as e:
             print(f'Erro ao remover o box: {e}')
 
-        input('Pressione uma tecla para continuar...')
+        input('\nPressione uma tecla para continuar...\n')
+
+    def mostrar_por_id(self):
+        print('Box por Id...')
+        try:
+            box_id = input('Digite o Id do box de livros para buscar: ')
+            box = self.__box_dao.buscar_por_id(ObjectId(box_id))
+
+            if box is None:
+                print('\nBox de livros não encontrado\n')
+            else:
+                print(box)
+        except Exception as e:
+            print(f'Erro ao exibir box de livros: {e}')
+
+        input('\nPressione uma tecla para continuar...\n')
