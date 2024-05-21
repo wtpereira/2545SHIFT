@@ -9,6 +9,9 @@ class Editora:
     def __str__(self) -> str:
         return f'{self.id} | {self.nome} | {self.endereco} | {self.telefone}'
 
+    def __repr__(self) -> str:
+        return f"{{ 'nome': {self.nome} }}"
+
     @property
     def id(self) -> int:
         return self.__id
@@ -42,4 +45,9 @@ class Editora:
         self.__telefone = telefone
 
     def as_dict(self) -> dict:
-        return {'nome': self.nome, 'endereco': self.endereco, 'telefone': self.telefone}
+        return {
+            'id': self.id,
+            'nome': self.nome,
+            'endereco': self.endereco,
+            'telefone': self.telefone
+        }

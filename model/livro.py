@@ -26,6 +26,9 @@ class Livro:
     def __str__(self) -> str:
         return f'Id: {self.__id} | Título: {self.__titulo} | Resumo: {self.__resumo} | Ano: {self.__ano} | Páginas: {self.__paginas} | Isbn: {self.__isbn} | Categoria: {self.categoria.nome} | Editora: {self.editora.nome} | Autor: {self.autor.nome}'
 
+    def __repr__(self) -> str:
+        return f"{{ 'titulo': {self.titulo} }}"
+
     @property
     def id(self) -> int:
         return self.__id
@@ -97,3 +100,16 @@ class Livro:
     @autor.setter
     def autor(self, autor: Autor):
         self.__autor = autor
+
+    def as_dict(self) -> dict:
+        return {
+            'id': self.id,
+            'titulo': self.titulo,
+            'resumo': self.resumo,
+            'ano': self.ano,
+            'paginas': self.paginas,
+            'isbn': self.isbn,
+            'autor': self.autor.as_dict(),
+            'categoria': self.categoria.as_dict(),
+            'editora': self.editora.as_dict(),
+        }

@@ -3,12 +3,14 @@ from service.categoria_service import CategoriaService
 from service.editora_service import EditoraService
 from service.autor_service import AutorService
 from service.livro_service import LivroService
+from service.box_service import BoxService
 
 
 categoria_service = CategoriaService()
 editora_service = EditoraService()
 autor_service = AutorService()
 livro_service = LivroService(categoria_service.categoria_dao, editora_service.editora_dao, autor_service.autor_dao)
+box_service = BoxService()
 
 
 def getDate(a):
@@ -28,6 +30,7 @@ def menu_principal():
             '2 - Editoras\n'
             '3 - Autores\n'
             '4 - Livros\n'
+            '5 - Box\n'
             '0 - Sair do programa\n')
 
     escolha = input('Digite a opção: ')
@@ -49,6 +52,8 @@ def menu_principal():
         else:
             print('É necessário ter ao menos uma categoria, uma editora e um autor cadastrado!')
 
+    elif escolha == '5':
+        box_service.menu('Box')
     else:
         print('Opção inválida! Por favor, tente novamente.')
 

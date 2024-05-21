@@ -6,6 +6,9 @@ class Categoria:
     def __str__(self) -> str:
         return f'{self.id} | {self.nome}'
 
+    def __repr__(self) -> str:
+        return f"{{ 'nome': {self.nome} }}"
+
     @property
     def id(self) -> int:
         return self.__id
@@ -21,3 +24,9 @@ class Categoria:
     @nome.setter
     def nome(self, nome: str):
         self.__nome = nome.strip().title()
+
+    def as_dict(self) -> dict:
+        return {
+            'id': self.id,
+            'nome': self.nome
+        }

@@ -10,6 +10,9 @@ class Autor:
     def __str__(self) -> str:
         return f'{self.id} | {self.nome} | {self.email} | {self.telefone} | {self.bio}'
 
+    def __repr__(self) -> str:
+        return f"{{'nome': {self.nome} }}"
+
     @property
     def id(self) -> int:
         return self.__id
@@ -49,3 +52,12 @@ class Autor:
     @bio.setter
     def bio(self, bio: str):
         self.__bio = bio
+
+    def as_dict(self) -> dict:
+        return {
+            'id': self.id,
+            'nome': self.nome,
+            'email': self.email,
+            'telefone': self.telefone,
+            'bio': self.bio
+        }
