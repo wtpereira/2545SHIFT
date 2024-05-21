@@ -26,7 +26,7 @@ class EditoraService(MenuService):
             print(f'Erro ao exibir as editoras! - {e}')
             return
 
-        input('Pressione uma tecla para continuar...')
+        input('\nPressione uma tecla para continuar...\n')
 
     def adicionar(self):
         print('\nAdicionando editora...')
@@ -43,7 +43,7 @@ class EditoraService(MenuService):
             print(f'Erro ao inserir editora! - {e}')
             return
 
-        input('Pressione uma tecla para continuar...')
+        input('\nPressione uma tecla para continuar...\n')
 
     def remover(self):
         print('\nRemovendo editora...')
@@ -58,7 +58,7 @@ class EditoraService(MenuService):
             print(f'Erro ao excluir editora! - {e}')
             return
 
-        input('Pressione uma tecla para continuar...')
+        input('\nPressione uma tecla para continuar...\n')
 
     def mostrar_por_id(self):
         print('\Editora por Id...')
@@ -67,7 +67,7 @@ class EditoraService(MenuService):
             id = int(input('Digite o Id da editora para buscar: '))
             edt = self.__editora_dao.buscar_por_id(id)
 
-            if (edt == None):
+            if edt is None:
                 print('Editora não encontrada!')
             else:
                 print(f'{edt.id} | {edt.nome} | {edt.endereco} | {edt.telefone}')
@@ -75,7 +75,7 @@ class EditoraService(MenuService):
             print(f'Erro ao exibir editora! - {e}')
             return
 
-        input('Pressione uma tecla para continuar...')
+        input('\nPressione uma tecla para continuar...\n')
 
     def importar_csv(self):
         print('Importar editoras CSV...')
@@ -88,7 +88,7 @@ class EditoraService(MenuService):
             print(f'Erro ao importar dados do arquivo CSV: {e}')
             return
 
-        input('Pressione uma tecla para continuar...')
+        input('\nPressione uma tecla para continuar...\n')
 
     def importar_json(self):
         print('Importar editoras JSON...')
@@ -101,7 +101,7 @@ class EditoraService(MenuService):
             print(f'Erro ao importar dados do arquivo JSON: {e}')
             return
 
-        input('Pressione uma tecla para continuar...')
+        input('\nPressione uma tecla para continuar...\n')
 
     def exportar_json(self):
         print('Exportar editoras JSON...')
@@ -114,4 +114,4 @@ class EditoraService(MenuService):
             print(f'Erro ao exportar arquivo JSON: {e}')
             return
 
-        input('Pressione uma tecla para continuar...')
+        input('\nPressione uma tecla para continuar...\n')

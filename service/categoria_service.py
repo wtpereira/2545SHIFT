@@ -23,7 +23,7 @@ class CategoriaService(MenuService):
         except Exception as e:
             print(f'Erro ao exibir as categorias: {e}')
 
-        input('Pressione uma tecla para continuar...')
+        input('\nPressione uma tecla para continuar...\n')
 
     def adicionar(self):
         print('Adicionando categoria...')
@@ -35,7 +35,7 @@ class CategoriaService(MenuService):
         except Exception as e:
             print(f'Erro ao adicionar categoria: {e}')
 
-        input('Pressione uma tecla para continuar...')
+        input('\nPressione uma tecla para continuar...\n')
 
     def remover(self):
         print('Removendo categoria...')
@@ -49,7 +49,7 @@ class CategoriaService(MenuService):
         except Exception as e:
             print(f'Erro ao remover categoria: {e}')
 
-        input('Pressione uma tecla para continuar...')
+        input('\nPressione uma tecla para continuar...\n')
 
     def mostrar_por_id(self):
         print('Categoria por Id...')
@@ -57,14 +57,14 @@ class CategoriaService(MenuService):
             id = int(input('Digite o Id da categoria para buscar: '))
             cat = self.__categoria_dao.buscar_por_id(id)
 
-            if cat == None:
+            if cat is None:
                 print('\nCategoria não encontrada\n')
             else:
                 print(cat)
         except Exception as e:
             print(f'Erro ao exibir categoria: {e}')
 
-        input('Pressione uma tecla para continuar...')
+        input('\nPressione uma tecla para continuar...\n')
 
     def importar_csv(self):
         print('Método ainda não implementado.')

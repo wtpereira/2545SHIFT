@@ -26,7 +26,7 @@ class LivroService(MenuService):
         except Exception as e:
             print(f'Erro ao exibir os livros: {e}')
 
-        input('Pressione uma tecla para continuar...')
+        input('\nPressione uma tecla para continuar...\n')
 
     def adicionar(self):
         print('\nAdicionando livro...')
@@ -88,7 +88,7 @@ class LivroService(MenuService):
         except Exception as e:
             print(f'Erro ao inserir novo livro: {e}')
 
-        input('Pressione uma tecla para continuar...')
+        input('\nPressione uma tecla para continuar...\n')
 
     def remover(self):
         print('\nRemovendo livro...')
@@ -102,7 +102,7 @@ class LivroService(MenuService):
         except Exception as e:
             print(f'Erro ao excluir livro: {e}')
 
-        input('Pressione uma tecla para continuar...')
+        input('\nPressione uma tecla para continuar...\n')
 
     def mostrar_por_id(self):
         print('\nLivro por Id...')
@@ -118,7 +118,7 @@ class LivroService(MenuService):
         except Exception as e:
             print(f'Erro ao exibir livro: {e}')
 
-        input('Pressione uma tecla para continuar...')
+        input('\nPressione uma tecla para continuar...\n')
 
     def importar_csv(self):
         print('Método ainda não implementado.')

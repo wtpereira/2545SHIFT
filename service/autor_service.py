@@ -27,7 +27,7 @@ class AutorService(MenuService):
             print(f'Erro ao exibir os autores! - {e}')
             return
 
-        input('Pressione uma tecla para continuar...')
+        input('\nPressione uma tecla para continuar...\n')
 
     def adicionar(self):
         print('\nAdicionando autor...')
@@ -44,7 +44,7 @@ class AutorService(MenuService):
             print(f'Erro ao inserir autor! - {e}')
             return
 
-        input('Pressione uma tecla para continuar...')
+        input('\nPressione uma tecla para continuar...\n')
 
     def remover(self):
         print('\nRemovendo autor...')
@@ -59,7 +59,7 @@ class AutorService(MenuService):
             print(f'Erro ao excluir autor! - {e}')
             return
 
-        input('Pressione uma tecla para continuar...')
+        input('\nPressione uma tecla para continuar...\n')
 
     def mostrar_por_id(self):
         print('\nAutor por Id...')
@@ -68,7 +68,7 @@ class AutorService(MenuService):
             id = int(input('Digite o Id do autor para buscar: '))
             aut = self.__autor_dao.buscar_por_id(id)
 
-            if (aut == None):
+            if aut is None:
                 print('Autor não encontrado!')
             else:
                 print(f'Id: {aut.id} | Autor: {aut.nome} | Email: {aut.email} | Telefone: {aut.telefone} | Bio: {aut.bio}')
@@ -76,7 +76,7 @@ class AutorService(MenuService):
             print(f'Erro ao exibir autor! - {e}')
             return
 
-        input('Pressione uma tecla para continuar...')
+        input('\nPressione uma tecla para continuar...\n')
 
     def importar_csv(self):
         print('Importar autores CSV...')
@@ -89,7 +89,7 @@ class AutorService(MenuService):
             print(f'Erro ao importar dados do arquivo CSV: {e}')
             return
 
-        input('Pressione uma tecla para continuar...')
+        input('\nPressione uma tecla para continuar...\n')
 
     def importar_json(self):
         print('Método não implementado.')
